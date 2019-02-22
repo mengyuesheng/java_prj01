@@ -7,4 +7,7 @@ public class Test {
 	private	String Hello(){
 		return "hello word";
 	}
+	private String Word(){
+		return "Word";
+	}
 }
