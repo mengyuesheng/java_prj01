@@ -48,9 +48,8 @@ public class Employee implements Serializable {
 		
 	}
 
-	public Employee(Long employeeID, String employeeName, boolean employeeSex, Timestamp employeeBirth,
+	public Employee(String employeeName, boolean employeeSex, Timestamp employeeBirth,
 			String employeePhone, String employeePlace, Timestamp joinTime, String password, boolean isLead) {
-		this.employeeID = employeeID;
 		this.employeeName = employeeName;
 		this.employeeSex = employeeSex;
 		this.employeeBirth = employeeBirth;
