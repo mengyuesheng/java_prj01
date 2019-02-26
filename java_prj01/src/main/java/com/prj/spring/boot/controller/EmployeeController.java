@@ -17,8 +17,8 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 	
-	@GetMapping("/add")
+	/*@GetMapping("/add")
 	public ModelAndView addEmployee(Model model) {
 		model.addAttribute("employee", new Employee(null,true,null,null,null,null,null,true));
-	}
+	}*/
 }
