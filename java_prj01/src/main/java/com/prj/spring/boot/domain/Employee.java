@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 @Entity
 @Table(name="tb_employee")
 public class Employee implements Serializable {
@@ -123,7 +125,13 @@ public class Employee implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
+	public void setEncodePassword(String password) {
+		PasswordEncoder  encoder = new BCryptPasswordEncoder();
+		String encodePasswd = encoder.encode(password);
+		this.password = encodePasswd;
+	}
+	
 	public boolean isLead() {
 		return isLead;
 	}

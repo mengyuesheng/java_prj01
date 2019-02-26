@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: header}">
+</head>
+    <body>
+
+    <div class="container blog-content-container">
+ 
+		<form th:action="@{/employees}"  method="post">
+			<h2 class="form-signin-heading">添加成为员工</h2>
+			
+			<div class="form-group col-md-5">
+				<label for="employeeName" class="col-form-label">员工编号</label>
+				<input type="text" class="form-control" id="employeeName" name="employeeName" maxlength="50" placeholder="请输入员工编号，至少3个字符，至多20个">
+	 
+			</div>
+			<div class="form-group col-md-5">
+				<label for="employeeSex" class="col-form-label">性别</label>
+				<input type="radio" class="" id="employeeSex" name="employeeSex"  placeholder="男" value="true">男
+				<input type="radio" class="" id="employeeSex" name="employeeSex"  placeholder="女" value="false">女
+			</div>
+			<div class="form-group col-md-5">
+				<label for="password" class="col-form-label">密码</label>
+				<input type="password" class="form-control" id="password" name="password" maxlength="30" placeholder="请输入密码，字母或特殊符号和数字结合" >
+			</div>
+			<div class="form-group col-md-5">
+				<label for="employeeBirth" class="col-form-label">出生日期</label>
+				<input type="text" class="form-control" id="employeeBirth" name="employeeBirth" maxlength="30" placeholder="请输入出生日期" >
+			</div>
+			<div class="form-group col-md-5">
+				<label for="employeePhone" class="col-form-label">办公室电话</label>
+				<input type="text" class="form-control" id="employeePhone" name="employeePhone" maxlength="30" placeholder="请输入办公室电话" >
+			</div>
+			<div class="form-group col-md-5">
+				<label for="employeePlace" class="col-form-label">地址</label>
+				<input type="text" class="form-control" id="employeePlace" name="employeePlace" maxlength="30" placeholder="请输入地址" >
+			</div>
+			<div class="form-group col-md-5">
+				<label for="isLead" class="col-form-label">是否为领导</label>
+				<input type="radio" class="" id="isLead" name="isLead"  placeholder="领导" value="true">领导
+				<input type="radio" class="" id="isLead" name="isLead"  placeholder="员工" value="false">员工
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">提交</button>
+			</div> 
+		</form>
+    </div> <!-- /container -->
+ 
+	
+	<div th:replace="~{fragments/footer :: footer}">...</div>
+    </body>
+</html>

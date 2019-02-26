@@ -2,39 +2,50 @@ package com.prj.spring.boot.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.prj.spring.boot.domain.Employee;
 
 public interface EmployeeService {
 	/**
-	 * ±£´æÓÃ»§
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	 * @param employee
 	 * @return
 	 */
 	Employee save(Employee employee);
 	/**
-	 * É¾³ıÓÃ»§
+	 * É¾ï¿½ï¿½ï¿½Ã»ï¿½
 	 * @param id
 	 */
 	void removeEmployee(Long id);
 	/**
-	 * É¾³ıÁĞ±íÖĞµÄÓÃ»§
+	 * É¾ï¿½ï¿½ï¿½Ğ±ï¿½ï¿½Ğµï¿½ï¿½Ã»ï¿½
 	 * @param employee
 	 */
 	void removeEmployeeInBatch(List<Employee> employee);
 	/**
-	 * ¸üĞÂÓÃ»§
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
 	 * @param employee
 	 */
 	void updateEmployee(Employee employee);
 	/**
-	 * ¸ü½üID»ñÈ¡ÓÃ»§
+	 * ï¿½ï¿½ï¿½ï¿½IDï¿½ï¿½È¡ï¿½Ã»ï¿½
 	 * @param id
 	 * @return
 	 */
 	Employee getEmployeeById(Long id);
 	/**
-	 * »ñÈ¡ÓÃ»§ÁĞ±í
+	 * ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½Ğ±ï¿½
 	 * @return
 	 */
 	List<Employee> listEmployee();
+	
+	/**
+	 * æ ¹æ®ç”¨æˆ·åè¿›è¡Œåˆ†é¡µæ¨¡ç³ŠæŸ¥è¯¢
+	 * @param name
+	 * @param pageable
+	 * @return
+	 */
+	Page<Employee> listUsersByNameLike(String name, Pageable pageable);
 }

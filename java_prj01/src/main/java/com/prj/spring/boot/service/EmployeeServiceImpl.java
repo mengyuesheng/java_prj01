@@ -5,10 +5,13 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import com.prj.spring.boot.domain.Employee;
 import com.prj.spring.boot.repository.EmployeeRepository;
-
+@Service
 public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	EmployeeRepository employeeRepository;
@@ -45,6 +48,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<Employee> listEmployee() {
 		return employeeRepository.findAll();
+	}
+
+	@Override
+	public Page<Employee> listUsersByNameLike(String employeeName, Pageable pageable) {
+		// 模糊查询
+		employeeName = "%" + employeeName + "%";
+		Page<Employee> users = employeeRepository.findByEmployeeNameLike(employeeName, pageable);
+		return users;
 	}
 
 }
